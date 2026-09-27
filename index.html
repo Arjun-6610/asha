@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aasha Dd ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden}
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#05030a;
+    color:#fff;
+}
+button{
+    font-family:inherit;
+    cursor:pointer;
+    border:0;
+}
+.screen{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    overflow:hidden;
+}
+.screen.active{display:flex}
+
+.bg{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%,rgba(255,65,125,.18),transparent 30%),
+      radial-gradient(circle at 80% 80%,rgba(125,65,255,.2),transparent 30%),
+      linear-gradient(135deg,#09030d,#180612,#05030a);
+    z-index:-3;
+}
+.stars{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background-image:
+      radial-gradient(#fff 1px,transparent 1px),
+      radial-gradient(#fff 1px,transparent 1px);
+    background-size:70px 70px,110px 110px;
+    background-position:0 0,30px 50px;
+    opacity:.25;
+    animation:stars 18s linear infinite;
+}
+@keyframes stars{
+    from{transform:translateY(0)}
+    to{transform:translateY(-70px)}
+}
+
+.content{
+    width:min(900px,100%);
+    z-index:2;
+}
+.small{
+    color:#ffb5cc;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:clamp(11px,2vw,15px);
+    margin-bottom:18px;
+}
+h1{
+    font-size:clamp(42px,9vw,90px);
+    line-height:1;
+    margin-bottom:22px;
+    background:linear-gradient(90deg,#fff,#ff9fc0,#fff);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 3s infinite;
+}
+h2{
+    font-size:clamp(30px,6vw,62px);
+    margin-bottom:18px;
+}
+p{
+    font-family:Arial,sans-serif;
+    line-height:1.7;
+    color:#eee;
+}
+@keyframes shine{
+    0%,100%{filter:brightness(1)}
+    50%{filter:brightness(1.5)}
+}
+
+.main-btn{
+    margin-top:30px;
+    padding:15px 30px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff3f79,#ff7aa5);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    box-shadow:0 0 30px rgba(255,70,125,.4);
+    transition:.3s;
+}
+.main-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 45px rgba(255,70,125,.7);
+}
+.main-btn:active{transform:scale(.96)}
+
+.photo-box{
+    width:min(570px,92vw);
+    height:min(62vh,570px);
+    margin:20px auto;
+    border:2px solid rgba(255,160,190,.45);
+    border-radius:25px;
+    overflow:hidden;
+    background:rgba(255,255,255,.06);
+    box-shadow:0 0 50px rgba(255,50,120,.18);
+    position:relative;
+}
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.photo-placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#aaa;
+    font-family:Arial,sans-serif;
+}
+.photo-placeholder span{
+    font-size:65px;
+    margin-bottom:12px;
+}
+.caption{
+    font-size:18px;
+    margin-top:15px;
+    color:#ffd5e1;
+}
+
+.video-box{
+    width:min(800px,94vw);
+    max-height:65vh;
+    border-radius:22px;
+    overflow:hidden;
+    border:2px solid rgba(255,160,190,.45);
+    box-shadow:0 0 50px rgba(255,50,120,.2);
+    background:#000;
+}
+.video-box video{
+    width:100%;
+    max-height:65vh;
+    display:block;
+}
+.video-note{
+    margin-top:15px;
+    color:#ffc4d7;
+    font-family:Arial,sans-serif;
+}
+
+.counter{
+    font-family:Arial,sans-serif;
+    font-weight:900;
+    font-size:clamp(110px,25vw,260px);
+    line-height:1;
+    color:#fff;
+    text-shadow:0 0 25px #ff477f,0 0 70px rgba(255,50,120,.6);
+}
+.counter-label{
+    font-size:clamp(17px,3vw,28px);
+    color:#ffc2d4;
+    margin-top:15px;
+}
+.message{
+    opacity:0;
+    transform:translateY(20px);
+    transition:1s;
+}
+.message.show{
+    opacity:1;
+    transform:translateY(0);
+}
+.half{
+    font-size:clamp(25px,5vw,55px);
+    margin:20px 0;
+}
+.equal{
+    font-size:clamp(45px,9vw,100px);
+    font-weight:bold;
+    color:#ff9fbd;
+}
+.final-number{
+    font-size:clamp(120px,30vw,300px);
+    font-weight:900;
+    line-height:.8;
+    color:#fff;
+    text-shadow:0 0 30px #ff3f79,0 0 90px #ff3f79;
+    animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+}
+.final-title{
+    font-size:clamp(35px,7vw,78px);
+    margin-top:40px;
+    color:#fff;
+}
+.final-sub{
+    margin-top:18px;
+    font-size:clamp(17px,3vw,25px);
+    color:#ffd0dd;
+}
+.heart{
+    position:fixed;
+    pointer-events:none;
+    animation:floatHeart 4s linear forwards;
+    z-index:10;
+}
+@keyframes floatHeart{
+    0%{transform:translateY(0) scale(.5);opacity:0}
+    15%{opacity:1}
+    100%{transform:translateY(-110vh) scale(1.5) rotate(20deg);opacity:0}
+}
+
+.confetti{
+    position:fixed;
+    width:9px;
+    height:15px;
+    top:-20px;
+    z-index:20;
+    animation:fall linear forwards;
+}
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:.9;
+    }
+}
+
+.fadeIn{
+    animation:fadeIn .9s ease both;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(.94) translateY(15px)}
+    to{opacity:1;transform:scale(1) translateY(0)}
+}
+
+@media(max-width:600px){
+    .screen{padding:18px}
+    .photo-box{height:55vh}
+    .main-btn{padding:13px 24px;font-size:15px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="stars"></div>
+
+<!-- WELCOME -->
+<section class="screen active" id="welcome">
+    <div class="content fadeIn">
+        <div class="small">A little surprise for someone special</div>
+        <h1>Aasha Dd ❤️</h1>
+        <p>
+            Today is not just another day...<br>
+            There are a few surprises waiting for you.
+        </p>
+        <button class="main-btn" onclick="showScreen('photo1')">
+            🎁 Open My Surprise
+        </button>
+    </div>
+</section>
+
+<!-- PHOTO 1 -->
+<section class="screen" id="photo1">
+    <div class="content fadeIn">
+        <div class="small">Surprise 01</div>
+        <h2>A Beautiful Memory 📸</h2>
+        <div class="photo-box">
+            <img src="photo1.jpg" alt="Aasha photo 1"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">
+                <span>📸</span>Put <b>photo1.jpg</b> here
+            </div>
+        </div>
+        <div class="caption">A beautiful memory worth keeping forever ❤️</div>
+        <button class="main-btn" onclick="showScreen('photo2')">More Surprise ✨</button>
+    </div>
+</section>
+
+<!-- PHOTO 2 -->
+<section class="screen" id="photo2">
+    <div class="content fadeIn">
+        <div class="small">Surprise 02</div>
+        <h2>Another Special Moment 💕</h2>
+        <div class="photo-box">
+            <img src="photo2.jpg" alt="Aasha photo 2"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">
+                <span>📸</span>Put <b>photo2.jpg</b> here
+            </div>
+        </div>
+        <div class="caption">Some moments deserve a permanent place in our hearts.</div>
+        <button class="main-btn" onclick="showScreen('photo3')">One More 🎁</button>
+    </div>
+</section>
+
+<!-- PHOTO 3 -->
+<section class="screen" id="photo3">
+    <div class="content fadeIn">
+        <div class="small">Surprise 03</div>
+        <h2>Keep Smiling 😊</h2>
+        <div class="photo-box">
+            <img src="photo3.jpg" alt="Aasha photo 3"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">
+                <span>📸</span>Put <b>photo3.jpg</b> here
+            </div>
+        </div>
+        <div class="caption">Because your smile makes every memory better.</div>
+        <button class="main-btn" onclick="showScreen('photo4')">Next Surprise 💖</button>
+    </div>
+</section>
+
+<!-- PHOTO 4 -->
+<section class="screen" id="photo4">
+    <div class="content fadeIn">
+        <div class="small">Surprise 04</div>
+        <h2>A Moment To Remember ✨</h2>
+        <div class="photo-box">
+            <img src="photo4.jpg" alt="Aasha photo 4"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">
+                <span>📸</span>Put <b>photo4.jpg</b> here
+            </div>
+        </div>
+        <div class="caption">One more memory... and we're getting closer. 👀</div>
+        <button class="main-btn" onclick="showScreen('photo5')">Keep Going 🎀</button>
+    </div>
+</section>
+
+<!-- PHOTO 5 -->
+<section class="screen" id="photo5">
+    <div class="content fadeIn">
+        <div class="small">Surprise 05</div>
+        <h2>The Last Photo... Maybe 👀</h2>
+        <div class="photo-box">
+            <img src="photo5.jpg" alt="Aasha photo 5"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="photo-placeholder" style="display:none">
+                <span>📸</span>Put <b>photo5.jpg</b> here
+            </div>
+        </div>
+        <div class="caption">Five memories down... but the biggest surprise is still waiting.</div>
+        <button class="main-btn" onclick="showScreen('video')">🎬 Watch The Next Surprise</button>
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="screen" id="video">
+    <div class="content fadeIn">
+        <div class="small">A Special Video</div>
+        <h2>Made Just For You ❤️</h2>
+        <div class="video-box">
+            <video id="birthdayVideo" controls playsinline>
+                <source src="birthday-video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+        <div class="video-note">Take your time... there's one final surprise after this. 🎁</div>
+        <button class="main-btn" onclick="startNumbers()">I'm Ready 😏</button>
+    </div>
+</section>
+
+<!-- COUNTING -->
+<section class="screen" id="numbers">
+    <div class="content">
+        <div class="small" id="counterSmall">Let's see where this goes...</div>
+        <div class="counter" id="number">0</div>
+        <div class="counter-label" id="counterLabel">Starting from zero...</div>
+    </div>
+</section>
+
+<!-- 44 -->
+<section class="screen" id="fortyfour">
+    <div class="content fadeIn">
+        <div class="small">Wait...</div>
+        <div class="counter">44</div>
+        <div class="message" id="halfMessage">
+            <div class="half">That's not quite right...</div>
+            <button class="main-btn" onclick="halfNumber()">Let's Half It 😏</button>
+        </div>
+    </div>
+</section>
+
+<!-- 22 REVEAL -->
+<section class="screen" id="twentytwo">
+    <div class="content">
+        <div class="small">And the answer is...</div>
+        <div class="half" id="equation">44 ÷ 2</div>
+        <div class="equal">=</div>
+        <div class="final-number" id="finalNumber">22</div>
+    </div>
+</section>
+
+<!-- FINAL -->
+<section class="screen" id="final">
+    <div class="content fadeIn">
+        <div class="small">The real surprise ❤️</div>
+        <div class="final-number" style="font-size:clamp(80px,18vw,180px)">22</div>
+        <div class="final-title">🎂 HAPPY BIRTHDAY AASHA DD 🎂</div>
+        <div class="final-sub">
+            Wishing you endless happiness, love, laughter and beautiful memories. ❤️
+            <br><br>
+            <strong>With lots of love and best wishes,<br>
+            Arjun 🥳</strong>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentScreen = "welcome";
+
+function showScreen(id){
+    document.querySelectorAll(".screen").forEach(screen=>{
+        screen.classList.remove("active");
+    });
+
+    const next = document.getElementById(id);
+    next.classList.add("active");
+
+    const content = next.querySelector(".content");
+    if(content){
+        content.classList.remove("fadeIn");
+        void content.offsetWidth;
+        content.classList.add("fadeIn");
+    }
+
+    currentScreen = id;
+
+    if(id !== "video"){
+        const video = document.getElementById("birthdayVideo");
+        if(video && !video.paused) video.pause();
+    }
+}
+
+function startNumbers(){
+    showScreen("numbers");
+
+    const number = document.getElementById("number");
+    const label = document.getElementById("counterLabel");
+    const small = document.getElementById("counterSmall");
+
+    let i = 0;
+
+    number.textContent = "0";
+    label.textContent = "Starting from zero...";
+
+    const up = setInterval(()=>{
+        i++;
+        number.textContent = i;
+
+        if(i === 25) label.textContent = "We're getting somewhere...";
+        if(i === 50) label.textContent = "Halfway there...";
+        if(i === 75) label.textContent = "Almost there...";
+        if(i === 100){
+            clearInterval(up);
+
+            small.textContent = "Hmm... now let's go backwards.";
+            label.textContent = "Counting back...";
+
+            setTimeout(()=>{
+                let down = 100;
+
+                const countdown = setInterval(()=>{
+                    down--;
+                    number.textContent = down;
+
+                    if(down === 44){
+                        clearInterval(countdown);
+
+                        setTimeout(()=>{
+                            showScreen("fortyfour");
+                            setTimeout(()=>{
+                                document.getElementById("halfMessage").classList.add("show");
+                            },500);
+                        },700);
+                    }
+                },35);
+            },1000);
+        }
+    },18);
+}
+
+function halfNumber(){
+    showScreen("twentytwo");
+
+    setTimeout(()=>{
+        launchConfetti();
+    },900);
+
+    setTimeout(()=>{
+        showScreen("final");
+        launchConfetti();
+        createHearts();
+    },3500);
+}
+
+function launchConfetti(){
+    for(let i=0;i<140;i++){
+        const piece=document.createElement("div");
+        piece.className="confetti";
+        piece.style.left=Math.random()*100+"vw";
+        piece.style.animationDuration=(2+Math.random()*3)+"s";
+        piece.style.animationDelay=Math.random()*1.5+"s";
+        piece.style.transform=`rotate(${Math.random()*360}deg)`;
+        piece.style.background=`hsl(${Math.random()*360},90%,65%)`;
+        document.body.appendChild(piece);
+
+        setTimeout(()=>piece.remove(),6000);
+    }
+}
+
+function createHearts(){
+    const symbols=["❤️","💖","💕","💗","✨","🥳"];
+    for(let i=0;i<45;i++){
+        const heart=document.createElement("div");
+        heart.className="heart";
+        heart.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.top=(70+Math.random()*30)+"vh";
+        heart.style.fontSize=(18+Math.random()*28)+"px";
+        heart.style.animationDuration=(3+Math.random()*3)+"s";
+        heart.style.animationDelay=Math.random()*2+"s";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),7000);
+    }
+}
+</script>
+
+</body>
+</html>
